@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sccit.invectrl.mappers.AppUserMapper">
+
+    <select id="getInfo" parameterType="String" resultType="com.sccit.invectrl.dbEntitys.AppUserEntity">
+        SELECT * FROM AppUser WHERE DelState=0 AND Name = #{name} AND Password = #{password}
+    </select>
+
+    <select id="selectAll"   resultType="com.sccit.invectrl.dbEntitys.AppUserEntity">
+        select * from AppUser  WHERE DelState=0
+    </select>
+
+</mapper>
